@@ -194,3 +194,19 @@ footer {
     max-height: 110px;
   }
 }
+
+.iframe-hint {
+  background: var(--team-red);
+  color: white;
+  text-align: center;
+  padding: 8px 12px;
+  font-weight: 600;
+  font-size: 14px;
+  animation: fadeOut 4s forwards;
+}
+
+@keyframes fadeOut {
+  0% { opacity: 1; }
+  75% { opacity: 1; }
+  100% { opacity: 0; height: 0; padding: 0; }
+}
