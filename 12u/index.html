@@ -1,61 +1,23 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Tournament Tracker</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <style>
-    :root {
-      --team-blue: #0038A8;
-      --team-red: #CE1126;
-      --team-white: #FFFFFF;
-    }
-
-    html, body {
-      margin: 0;
-      padding: 0;
-      height: 100%;
-      background: var(--team-blue);
-      font-family: Arial, Helvetica, sans-serif;
-    }
-
-    header {
-      background: var(--team-blue);
-      color: var(--team-white);
-      padding: 14px 20px;
-      font-size: 20px;
-      font-weight: bold;
-      border-bottom: 4px solid var(--team-red);
-      letter-spacing: 0.5px;
-    }
-
-    .content {
-      height: calc(100% - 60px);
-      background: var(--team-white);
-    }
-
-    iframe {
-      width: 100%;
-      height: 100%;
-      border: none;
-    }
-
-    footer {
-      background: var(--team-blue);
-      color: var(--team-white);
-      text-align: center;
-      padding: 6px;
-      font-size: 12px;
-      border-top: 2px solid var(--team-red);
-    }
-  </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Yetis 12U</title>
+  <link rel="stylesheet" href="/assets/css/styles.css">
 </head>
 
 <body>
   <header>
-    Yetis Hockey Tournament Tracker - Mile High Meltdown 2026
+    SLV Yetis Hockey — 12U
   </header>
+
+  <div class="nav">
+    <a href="/">All</a>
+    <a class="active" href="/12u/">12U</a>
+    <a href="/14u/">14U</a>
+    <a href="/18u/">18U</a>
+  </div>
 
   <div class="content">
     <iframe
@@ -63,15 +25,17 @@
       style="width:100%; height:100vh; border:0;"
       loading="lazy"
     ></iframe>
+    <br> text test
     <iframe
       src="https://gamesheetstats.com/seasons/13698/schedule?configuration[infinite-scroll]=false&amp;configuration[logo]=false&amp;configuration[filters]=false&amp;filter[division]=72706&amp;filter[start_time_from]=default:2026-02-08&amp;filter[query]=SLVYHA"
       style="width:100%; height:100vh; border:0;"
       loading="lazy">
     </iframe>
   </div>
-  
+
   <footer>
-    Updated Live from GamesheetStats
+    Schedule data via GameSheetStats
   </footer>
 </body>
 </html>
+
