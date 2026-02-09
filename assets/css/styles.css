@@ -113,3 +113,31 @@ footer {
     font-size: 14px;
   }
 }
+
+.tournament-banner {
+  background: var(--team-white);
+  text-align: center;
+  padding: 20px 16px;
+  border-bottom: 2px solid #eee;
+}
+
+.tournament-banner img {
+  max-width: 260px;
+  height: auto;
+  transition: transform 0.2s ease;
+}
+
+.tournament-banner img:hover {
+  transform: scale(1.03);
+}
+
+/* Mobile refinement */
+@media (max-width: 480px) {
+  .tournament-banner {
+    padding: 16px 12px;
+  }
+
+  .tournament-banner img {
+    max-width: 200px;
+  }
+}
