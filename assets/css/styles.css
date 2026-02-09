@@ -162,12 +162,12 @@ footer {
 }
 
 .yeti-logo {
-  max-height: 80px;         /* controls visual height cleanly */
+  max-height: 120px;         /* controls visual height cleanly */
   width: auto;
 }
 
 .tournament-logo {
-  max-height: 95px;         /* slightly taller but proportional */
+  max-height: 120px;         /* slightly taller but proportional */
   width: auto;
   transition: transform 0.2s ease;
 }
