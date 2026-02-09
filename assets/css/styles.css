@@ -195,18 +195,40 @@ footer {
   }
 }
 
-.iframe-hint {
-  background: var(--team-red);
-  color: white;
-  text-align: center;
-  padding: 8px 12px;
-  font-weight: 600;
-  font-size: 14px;
-  animation: fadeOut 4s forwards;
+.content {
+  position: relative;
 }
 
-@keyframes fadeOut {
-  0% { opacity: 1; }
-  75% { opacity: 1; }
-  100% { opacity: 0; height: 0; padding: 0; }
+.menu-highlight {
+  position: absolute;
+  top: 12px;     /* adjust to line up with hamburger */
+  right: 12px;
+  width: 44px;
+  height: 44px;
+  border: 3px solid var(--team-red);
+  border-radius: 8px;
+  pointer-events: none;
+
+  /* animate once, then stay */
+  animation: pulseOnce 1.8s ease-out forwards;
 }
+
+@keyframes pulseOnce {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(206, 17, 38, 0.6);
+  }
+  40% {
+    transform: scale(1.12);
+    box-shadow: 0 0 0 8px rgba(206, 17, 38, 0.35);
+  }
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(206, 17, 38, 0);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: none;
+  }
+}
+
