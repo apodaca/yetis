@@ -116,28 +116,46 @@ footer {
 
 .tournament-banner {
   background: var(--team-white);
-  text-align: center;
-  padding: 20px 16px;
+  padding: 24px 16px;
   border-bottom: 2px solid #eee;
 }
 
-.tournament-banner img {
-  max-width: 260px;
+.banner-logos {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+
+.banner-logos img {
+  display: block;
   height: auto;
+}
+
+.yeti-logo {
+  max-width: 140px;
+}
+
+.tournament-logo {
+  max-width: 260px;
   transition: transform 0.2s ease;
 }
 
-.tournament-banner img:hover {
+.tournament-logo:hover {
   transform: scale(1.03);
 }
 
-/* Mobile refinement */
-@media (max-width: 480px) {
-  .tournament-banner {
-    padding: 16px 12px;
+@media (max-width: 600px) {
+  .banner-logos {
+    gap: 20px;
   }
 
-  .tournament-banner img {
+  .yeti-logo {
+    max-width: 100px;
+  }
+
+  .tournament-logo {
     max-width: 200px;
   }
 }
