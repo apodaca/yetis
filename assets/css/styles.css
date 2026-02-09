@@ -37,24 +37,20 @@ header {
 
 .nav a {
   text-decoration: none;
-  padding: 10px 14px;
-  background: var(--team-blue);
-  color: var(--team-white);
-  border-radius: 10px;
-  font-weight: 700;
-  font-size: 14px;
-  line-height: 1;
+  padding: 10px 12px;
+  background: transparent;
+  color: var(--team-blue);
+  border: 2px solid var(--team-blue);
+  border-radius: 999px;
+  font-weight: 800;
+  font-size: 13px;
   white-space: nowrap;
-  flex: 0 0 auto;
 }
-
-/* Active state */
 .nav a.active {
   background: var(--team-red);
+  border-color: var(--team-red);
+  color: var(--team-white);
 }
-
-
-
 
 .content {
   height: calc(100vh - 150px);
