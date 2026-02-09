@@ -12,14 +12,26 @@ html, body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-header {
+.main-header {
   background: var(--team-blue);
   color: var(--team-white);
-  padding: 14px 20px;
-  font-size: 20px;
-  font-weight: bold;
   border-bottom: 4px solid var(--team-red);
+  padding: 20px 16px;
+  text-align: center;
+}
+
+.header-title {
+  font-size: 22px;
+  font-weight: 800;
+  margin-bottom: 14px;
   letter-spacing: 0.5px;
+}
+
+.header-logo img {
+  max-width: 220px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
 }
 
 .nav {
@@ -78,7 +90,12 @@ footer {
     font-size: 18px;
     text-align: center;
   }
-
+  .header-title {
+    font-size: 18px;
+  }
+  .header-logo img {
+    max-width: 180px;
+  }
   .nav a {
     flex: 1 1 40%;
     text-align: center;
