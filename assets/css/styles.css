@@ -103,7 +103,7 @@ footer {
 }
 
 /* Desktop: center the nav and increase spacing a touch */
-@media (min-width: 700px) {
+@media (min-width: 600px) {
   .nav {
     justify-content: center;
     overflow-x: visible;
@@ -333,3 +333,9 @@ footer {
   opacity: 0.8;
 }
 
+@media (max-width: 600px) {
+  .sheet-image {
+    max-height: 85vh;
+    object-fit: contain;
+  }
+}
