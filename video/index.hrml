@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Yetis 12U</title>
+  <link rel="stylesheet" href="/assets/css/styles.css">
+</head>
+
+<body>
+
+  <div class="nav">
+    <a href="/">All</a>
+    <a  href="/12u/">12U</a>
+    <a href="/14u/">14U</a>
+    <a href="/18u/">18U</a>
+    <a class="active" href="/video/">Video</a>
+  </div>
+
+  <div class="content">
+    <iframe 
+      src="https://studio.sportsengineplay.com/stream-list-widget?video=true&organizationId=671121edd6c8d0c98ccd53d3">
+    </iframe>
+  </div>
+
+  <footer>
+    Follow your Yetis!
+  </footer>
+</body>
+</html>
