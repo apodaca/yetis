@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{{ page.title | default: "Yetis Tournament Tracker" }}</title>
+  
+  <!-- SEO & Social Cards Metadata -->
+  <meta property="og:title" content="{{ page.title | default: 'Yetis Tournament Tracker' }}">
+  <meta property="og:description" content="Follow live scores, standings, and video for the SLV Yetis!">
+  <meta property="og:image" content="{{ '/assets/images/yeti-1.png' | absolute_url }}">
+  <meta property="og:url" content="{{ site.url }}{{ page.url }}">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="stylesheet" href="{{ '/assets/css/styles.css' | relative_url }}">
+  <link rel="icon" type="image/png" sizes="32x32" href="{{ '/assets/icons/y_icon.png' | relative_url }}">
+</head>
+
+<body>
+  {% include header.html %}
+  
+  {{ content }}
+  
+  {% include footer.html %}
+</body>
+</html>

@@ -1,55 +1,13 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Yetis Tournament Tracker</title>
-  <link rel="stylesheet" href="/assets/css/styles.css">
-  <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/y_icon.png">
-</head>
-
-<body>
-
-  <div class="nav">
-    <a class="active" href="/">All</a>
-    <a href="/12u/">12U</a>
-    <a href="/14u/">14U</a>
-    <a href="/18u/">18U</a>
-    <a href="/video/">Video</a>
+---
+layout: default
+title: "Yetis Tournament Tracker"
+nav_id: "all"
+---
+<div class="content">
+  <div class="iframe-hint" id="iframeHint">
+    Tap the ☰ menu to view Scores, Standings, and other info! 👇
   </div>
-
-<div class="tournament-banner">
-  <div class="banner-logos">
-
-    <a href="https://slvhockey.org" target="_blank">
-      <img src="/assets/images/yeti-1.png"
-           alt="SLV Hockey"
-           class="yeti-logo">
-    </a>
-
-    <a href="https://www.rockymountainhockeyfederation.com/events/rmhf-centennial-cup-caha-state/76222"
-       target="_blank">
-      <img src="/assets/images/ccup_logo.png"
-           alt="Tournament Logo"
-           class="tournament-logo">
-    </a>
-
-  </div>
+  <iframe
+    src="https://gamesheetstats.com/seasons/13410/schedule?configuration%5Binfinite-scroll%5D=false&configuration%5Blogo%5D=false&filter%5Bquery%5D=slv&filter%5Bstart_time_from%5D=cleared">
+  </iframe>
 </div>
-
-  
-  <div class="content">
-    <div class="iframe-hint" id="iframeHint">
-      Tap the ☰ menu to view Scores, Standings, and other info! 👇
-    </div>
-    <iframe 
-      src="https://gamesheetstats.com/seasons/13410/schedule?configuration%5Binfinite-scroll%5D=false&configuration%5Blogo%5D=false&filter%5Bquery%5D=slv&filter%5Bstart_time_from%5D=cleared">
-    </iframe>
-  </div>
-
-
-  <footer>
-    Updated Live from GamesheetStats - Let's Go Yetis!!!
-  </footer>
-</body>
-</html>

@@ -1,0 +1,26 @@
+<div class="nav">
+  <a class="{% if page.nav_id == 'all' %}active{% endif %}" href="{{ '/' | relative_url }}">All</a>
+  <a class="{% if page.nav_id == '12u' %}active{% endif %}" href="{{ '/12u/' | relative_url }}">12U</a>
+  <a class="{% if page.nav_id == '14u' %}active{% endif %}" href="{{ '/14u/' | relative_url }}">14U</a>
+  <a class="{% if page.nav_id == '18u' %}active{% endif %}" href="{{ '/18u/' | relative_url }}">18U</a>
+  <a class="{% if page.nav_id == 'video' %}active{% endif %}" href="{{ '/video/' | relative_url }}">Video</a>
+</div>
+
+{% if page.hide_banner != true %}
+<div class="tournament-banner">
+  <div class="banner-logos">
+    <a href="https://slvhockey.org" target="_blank">
+      <img src="{{ '/assets/images/yeti-1.png' | relative_url }}"
+           alt="SLV Hockey"
+           class="yeti-logo">
+    </a>
+
+    <a href="https://www.rockymountainhockeyfederation.com/events/rmhf-centennial-cup-caha-state/76222"
+       target="_blank">
+      <img src="{{ '/assets/images/ccup_logo.png' | relative_url }}"
+           alt="Tournament Logo"
+           class="tournament-logo">
+    </a>
+  </div>
+</div>
+{% endif %}
