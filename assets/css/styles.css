@@ -1,159 +1,131 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
 :root {
+  /* Official Team Colors */
   --team-blue: #0038A8;
   --team-red: #CE1126;
   --team-white: #FFFFFF;
+
+  /* Dark Mode Surface Colors */
+  --bg-color: #0B1120;
+  /* Very dark slate for main background */
+  --surface: #1E293B;
+  /* Slate 800 - Cards/Nav */
+  --surface-hover: #334155;
+  /* Slate 700 - Hover states */
+
+  --text-main: #F8FAFC;
+  /* Slate 50 - High contrast text */
+  --text-muted: #94A3B8;
+  /* Slate 400 - Secondary text */
+
+  --border-color: #334155;
+  /* Slate 700 - Subtle borders */
+
+  /* Deep Shadows tailored for Dark UI */
+  --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.5);
+  --shadow-md: 0 10px 15px -3px rgba(0, 0, 0, 0.6);
+  --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.7);
+
+  /* Glow effects matching team colors */
+  --glow-red: 0 0 20px rgba(206, 17, 38, 0.4);
+  --glow-blue: 0 0 20px rgba(0, 56, 168, 0.4);
 }
 
-html, body {
+html,
+body {
   margin: 0;
   padding: 0;
   height: 100%;
-  background: var(--team-blue);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--bg-color);
+  font-family: 'Inter', Arial, Helvetica, sans-serif;
+  color: var(--text-main);
+  -webkit-font-smoothing: antialiased;
 }
 
-.main-header {
-  background: var(--team-blue);
-  color: var(--team-white);
-  border-bottom: 4px solid var(--team-red);
-  padding: 20px 16px;
-  text-align: center;
-}
-
-.header-title {
-  font-size: 22px;
-  font-weight: 800;
-  margin-bottom: 14px;
-  letter-spacing: 0.5px;
-}
-
-.header-logo img {
-  max-width: 220px;
-  height: auto;
-  display: block;
-  margin: 0 auto;
-}
+/* ==== Main Mobile-Optimized Nav ==== */
 
 .nav {
   display: flex;
-  gap: 10px;
-  padding: 10px 12px;
-  background: var(--team-white);
-  border-bottom: 2px solid var(--team-red);
+  gap: 12px;
+  padding: 16px 20px;
+  background: rgba(30, 41, 59, 0.85);
+  /* Translucent surface */
+  backdrop-filter: blur(12px);
+  /* Modern glassmorphism on scroll */
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 2px solid var(--team-blue);
+  /* Subtle nod to the team blue */
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: var(--shadow-sm);
 
-  /* key mobile behavior */
+  /* Crucial Mobile Scroll setup */
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
   justify-content: flex-start;
+  align-items: center;
+  scrollbar-width: none;
+  /* Hide scrollbar Firefox */
+}
+
+.nav::-webkit-scrollbar {
+  display: none;
+  /* Hide scrollbar Webkit */
 }
 
 .nav a {
   text-decoration: none;
-  padding: 10px 12px;
-  background: transparent;
-  color: var(--team-blue);
-  border: 2px solid var(--team-blue);
+  padding: 12px 24px;
+  background: var(--surface);
+  color: var(--text-main);
+  border: 1px solid var(--border-color);
   border-radius: 999px;
-  font-weight: 800;
-  font-size: 13px;
+  font-weight: 600;
+  font-size: 15px;
+  /* Larger tap target */
   white-space: nowrap;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
 }
+
+.nav a:active {
+  transform: scale(0.96);
+  /* Tactile feedback on tap */
+}
+
 .nav a.active {
   background: var(--team-red);
+  color: var(--team-white);
   border-color: var(--team-red);
-  color: var(--team-white);
+  box-shadow: var(--glow-red);
 }
 
-.content {
-  height: calc(100vh - 150px);
-  background: var(--team-white);
-}
-
-iframe {
-  width: 100%;
-  height: 100%;
-  border: none;
-}
-
-footer {
-  background: var(--team-blue);
-  color: var(--team-white);
-  text-align: center;
-  padding: 6px;
-  font-size: 12px;
-  border-top: 2px solid var(--team-red);
-}
-
-/* Mobile tweak */
-@media (max-width: 600px) {
-  header {
-    font-size: 18px;
-    text-align: center;
-  }
-  .header-title {
-    font-size: 18px;
-  }
-  .header-logo img {
-    max-width: 180px;
-  }
-  .nav a {
-    flex: 1 1 40%;
-    text-align: center;
-  }
-}
-
-/* Desktop: center the nav and increase spacing a touch */
-@media (min-width: 600px) {
-  .nav {
-    justify-content: center;
-    overflow-x: visible;
-  }
-  .nav a {
-    padding: 10px 18px;
-    font-size: 14px;
-  }
-}
+/* ==== Tournament Banner Block ==== */
 
 .tournament-banner {
-  background: var(--team-white);
-  padding: 24px 16px;
-  border-bottom: 2px solid #eee;
+  background: var(--surface);
+  padding: 20px 20px;
+  border-bottom: 1px solid var(--border-color);
+  box-shadow: var(--shadow-sm);
 }
 
 .banner-logos {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 32px;
-  flex-wrap: wrap;
-}
-
-.banner-logos img {
-  display: block;
-  height: auto;
-}
-
-.yeti-logo {
-  max-width: 140px;
-}
-
-.tournament-banner {
-  background: var(--team-white);
-  padding: 14px 16px;   /* reduced height */
-  border-bottom: 2px solid #eee;
-}
-
-.banner-logos {
-  display: flex;
-  align-items: center;      /* vertical centering */
-  justify-content: center;
-  gap: 28px;
+  gap: 36px;
   flex-wrap: wrap;
 }
 
 .banner-logos a {
   display: flex;
-  align-items: center;      /* ensures images are vertically centered */
+  align-items: center;
+  transition: transform 0.25s ease;
+}
+
+.banner-logos a:active {
+  transform: scale(0.95);
 }
 
 .banner-logos img {
@@ -162,54 +134,90 @@ footer {
 }
 
 .yeti-logo {
-  max-height: 120px;         /* controls visual height cleanly */
+  max-height: 100px;
   width: auto;
+  filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.5));
 }
 
 .tournament-logo {
-  max-height: 120px;         /* slightly taller but proportional */
+  max-height: 100px;
   width: auto;
-  transition: transform 0.2s ease;
+  filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.5));
 }
-
-.tournament-logo:hover {
-  transform: scale(1.03);
-}
-
 
 @media (max-width: 600px) {
   .tournament-banner {
-    padding: 12px 12px;
+    padding: 16px;
   }
 
   .banner-logos {
-    gap: 18px;
+    gap: 24px;
   }
 
-  .yeti-logo {
-    max-height: 120px;
-  }
-
+  .yeti-logo,
   .tournament-logo {
-    max-height: 110px;
+    max-height: 80px;
   }
 }
+
+/* ==== Main Content & Iframe ==== */
 
 .content {
+  height: calc(100vh - 160px);
+  /* Fill remaining mobile space */
+  background: var(--bg-color);
   position: relative;
+  display: flex;
+  flex-direction: column;
 }
+
+.iframe-hint {
+  text-align: center;
+  padding: 14px;
+  background: var(--team-blue);
+  /* Using team blue for highlight blocks */
+  color: var(--team-white);
+  font-weight: 600;
+  font-size: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  margin: 16px auto;
+  max-width: 600px;
+  width: calc(100% - 32px);
+  box-shadow: var(--shadow-md), var(--glow-blue);
+}
+
+iframe {
+  flex-grow: 1;
+  width: 100%;
+  border: none;
+  background: #ffffff;
+  /* Typically game sheets are white, so keep iframe bg white to avoid ugly loading flashes */
+}
+
+footer {
+  background: var(--surface);
+  color: var(--text-muted);
+  text-align: center;
+  padding: 16px;
+  font-size: 13px;
+  font-weight: 500;
+  border-top: 2px solid var(--team-red);
+  padding-bottom: max(16px, env(safe-area-inset-bottom));
+  /* Accommodate iPhone home bar */
+}
+
+/* ==== Component Animations ==== */
 
 .menu-highlight {
   position: absolute;
-  top: 12px;     /* adjust to line up with hamburger */
+  top: 12px;
   right: 12px;
   width: 44px;
   height: 44px;
   border: 3px solid var(--team-red);
   border-radius: 8px;
   pointer-events: none;
-
-  /* animate once, then stay */
   animation: pulseOnce 1.8s ease-out forwards;
 }
 
@@ -218,98 +226,81 @@ footer {
     transform: scale(1);
     box-shadow: 0 0 0 0 rgba(206, 17, 38, 0.6);
   }
+
   40% {
-    transform: scale(1.12);
-    box-shadow: 0 0 0 8px rgba(206, 17, 38, 0.35);
+    transform: scale(1.1 -0.02);
+    box-shadow: 0 0 0 10px rgba(206, 17, 38, 0);
   }
-  70% {
-    transform: scale(1);
-    box-shadow: 0 0 0 0 rgba(206, 17, 38, 0);
-  }
+
   100% {
     transform: scale(1);
     box-shadow: none;
   }
 }
 
+/* ==== Auxiliary Content Pages (Like Video) ==== */
+
 .body-content {
   max-width: 760px;
-  margin: 28px auto;
-  padding: 0 20px 24px 20px;
-  color: var(--team-white);
+  margin: 24px auto;
+  padding: 24px;
+  color: var(--text-main);
   text-align: center;
+  background: var(--surface);
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  box-shadow: var(--shadow-lg);
 }
 
 .body-content h1 {
-  font-size: 22px;
+  font-size: 26px;
   font-weight: 800;
-  margin-bottom: 14px;
-  padding-bottom: 6px;
-  border-bottom: 3px solid var(--team-red);
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid var(--team-red);
   display: inline-block;
+  color: var(--text-main);
+  letter-spacing: -0.5px;
 }
 
 .body-content h2 {
-  font-size: 18px;
+  font-size: 20px;
   font-weight: 700;
-  margin-top: 20px;
-  margin-bottom: 10px;
-  color: var(--team-white);
+  margin-top: 28px;
+  margin-bottom: 12px;
+  color: var(--text-main);
 }
 
 .body-content p {
-  font-size: 15px;
-  line-height: 1.65;
-  margin-bottom: 12px;
+  font-size: 16px;
+  line-height: 1.7;
+  margin-bottom: 16px;
+  color: var(--text-muted);
 }
 
 .schedule-highlight {
-  border: 2px solid var(--team-red);
-  padding: 14px 16px;
-  margin: 18px auto;
+  background: rgba(206, 17, 38, 0.1);
+  /* Real team red tinted background */
+  border: 1px solid var(--team-red);
+  border-radius: 12px;
+  padding: 20px 24px;
+  margin: 28px auto;
   font-weight: 700;
   display: inline-block;
+  color: var(--text-main);
+  box-shadow: var(--glow-red);
 }
 
 .schedule-highlight span {
   display: block;
-  margin-bottom: 6px;
-}
-
-@media (max-width: 600px) {
-  .body-content {
-    margin: 20px auto;
-    padding: 0 16px 20px 16px;
-  }
-
-  .body-content h1 {
-    font-size: 18px;
-  }
-
-  .body-content h2 {
-    font-size: 16px;
-  }
-}
-
-.sheet-wrapper {
-  width: 100%;
-  max-width: 1200px;
-  margin: 20px auto;
-  background: var(--team-white);
-  border-radius: 8px;
-  overflow: hidden;
-}
-
-.sheet-wrapper iframe {
-  width: 100%;
-  height: 1400px;  /* increase if content is cut off */
-  border: none;
-  display: block;
+  margin-bottom: 8px;
+  font-size: 18px;
+  color: var(--team-red);
 }
 
 .sheet-image-wrapper {
   max-width: 1100px;
-  margin: 24px auto 32px auto;
+  margin: 20px auto;
   text-align: center;
   padding: 0 16px;
 }
@@ -317,25 +308,47 @@ footer {
 .sheet-image {
   width: 100%;
   height: auto;
-  border-radius: 10px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.25);
-  transition: transform 0.2s ease;
-}
-
-.sheet-image:hover {
-  transform: scale(1.01);
+  border-radius: 12px;
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-lg);
 }
 
 .sheet-caption {
-  margin-top: 8px;
-  font-size: 13px;
-  color: var(--team-white);
-  opacity: 0.8;
+  margin-top: 14px;
+  font-size: 15px;
+  color: var(--text-muted);
+  font-weight: 500;
 }
 
-@media (max-width: 600px) {
-  .sheet-image {
-    max-height: 85vh;
-    object-fit: contain;
+/* Desktop Fixes */
+@media (min-width: 768px) {
+  .nav {
+    justify-content: center;
+    overflow-x: visible;
+  }
+
+  .nav a {
+    font-size: 15px;
+  }
+
+  .nav a:hover {
+    background: var(--surface-hover);
+    transform: translateY(-2px);
+  }
+
+  iframe {
+    width: calc(100% - 40px);
+    margin: 0 auto 20px auto;
+    border-radius: 12px;
+    box-shadow: var(--shadow-md);
+    height: auto;
+  }
+
+  .iframe-hint {
+    display: none;
+  }
+
+  .banner-logos a:hover {
+    transform: translateY(-3px);
   }
 }
